@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#publishAsap {
+    accent-color: red;
+  }
+  
+  .react-calendar__navigation button {
+    background-color: black;
+    color: white;
+}
+
+.react-calendar__navigation button:hover {
+    background-color: #333;
+}
+
