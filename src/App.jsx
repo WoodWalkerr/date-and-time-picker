@@ -7,7 +7,7 @@ const Datepicker = () => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const [publishAsap, setPublishAsap] = useState(false);
-  const [selectedTime, setSelectedTime] = useState("09:00 AM");
+  const [selectedTime, setSelectedTime] = useState("09:30 AM");
   const [selectedTimezone, setSelectedTimezone] = useState("UTC");
 
   const toggleCalendar = () => {
@@ -83,13 +83,14 @@ const Datepicker = () => {
                   .charAt(0);
               }}
               tileClassName={({ date, view }) => {
-                if (view === "month") {
+                if (date && selectedDate && view === "month") { // Add a null check for selectedDate
                   return date.getDate() === selectedDate.getDate()
                     ? "bg-red-700 rounded-md"
                     : "";
                 }
                 return "";
               }}
+              
             />
           </div>
         )}
